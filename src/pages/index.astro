@@ -3,5 +3,9 @@ import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout { ...{pageTitle : `FineKeeper`}}>
-	Something here
+	<div>
+		<p>The current URL is: {Astro.url}</p>
+		<p>The current URL pathname is: {Astro.url.pathname}</p>
+		<p>The current URL origin is: {Astro.url.origin}</p>
+	</div>
 </Layout>
