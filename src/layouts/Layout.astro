@@ -1,0 +1,25 @@
+---
+import "@/scripts/app";
+import { ViewTransitions } from "astro:transitions";
+
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle || "Astro Page"}</title>
+		<ViewTransitions />
+	</head>
+	<body transition:animate="slide">
+		<div class="container mx-auto h-screen flex flex-col">
+			<div class="w-full m-auto">
+				{pageTitle && <h1 class="text-2xl">{pageTitle}</h1>}
+				<slot />
+			</div>
+		</div>
+	</body>
+</html>
